@@ -335,18 +335,74 @@ function walletSum( wallet ){
   //
   // calculate the sum of money in the wallet and return
   // the total.
+
+  var total = 0;
+  var denominationList = Object.keys(wallet);
+  var numOfInstances = Object.values(wallet);
+
+  for(var i = 0; i < denominationList.length; i++){
+    total = total + (denominationList[i] * numOfInstances[i]);
+  }
+  return total;
 }
 
 function walletMerge( wallet1, wallet2 ){
   // return a new wallet object containing the contents of
   // both wallets passed in.
+  var wallet1denomination = Object.keys(wallet1);
+  var wallet1content = Object.values(wallet1);
+  var wallet2content = Object.values(wallet2);
+
+  var walletsCombined = {};
+  for (var i = 0; i < wallet1denomination.length; i++){
+    walletsCombined[wallet1denomination[i]] = wallet1content[i] + wallet2content[i];
+  }
+
+  return walletsCombined;
+
 }
 
 function arrayOfWallets( wallets ){
   // wallets is an array of wallets
 
   // Return a new wallet object containing the notes from all wallets
-}
+
+
+  var walletNew = {};
+
+  for (var i =0 ; i< wallets.length; i++){
+    var walletDenomination = Object.keys(wallets[i]);
+
+    for (var j = 0; j < walletDenomination.length; j++){
+      if (walletNew.hasOwnProperty(walletDenomination[j])){
+        var amount = wallets[i][walletDenomination[j]]
+        walletNew[walletDenomination[j]] = walletNew[walletDenomination[j]] + amount;
+      }
+      else {
+        var amount = wallets[i][walletDenomination[j]];
+        walletNew[walletDenomination[j]] = amount;
+      }
+    }
+
+    }
+  return walletNew;
+
+  }
+  debugger;
+  arrayOfWallets([{
+    5: 2,
+    10: 3,
+    20: 8
+  }, {
+    5: 2,
+    10: 1,
+    20: 0
+  },{
+    5: 0,
+    10: 3,
+    20: 4
+  }]);
+
 
 function crazyMoney( wallets ){
   // In previous exercises the notes denominations were
