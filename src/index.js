@@ -3,144 +3,71 @@ function add(a, b){
   return a + b;
 }
 
-function multiply(){
-  // this function is passed 4 paramers
-  // multiply them and return the result
+const multiply = (a, b, c, d) => a*b*c*d;
+
+const average = (a, b, c, d, e) => ((a+b+c+d+e)/5);
+
+const remainder = (a,b) => a % b;
+
+const exponential = (a, b) => a**b;
+
+const laxEquality = (a, b) => a == b && a!== b;
+
+const strictEqual = (a, b, c) => a === b && b === c;
+
+const smaller = (a,b) => b >= a ? true:'smaller'
+
+const isDivisibleBy = (divider1, divider2, number) => number % divider1 === 0 || number % divider2 === 0;
+
+const evens = (a, b, c, d) => (a % 2 === 0) && (b % 2 === 0) && (c % 2 === 0) && (d % 2 === 0);
+
+const removeMiddle = words => {
+  const m = Math.floor(words.length / 2);
+  return words.splice(m,1);
 }
 
-function average(){
-  // this function is passed 5 heights in meters
-  // calculate their average and return it
-}
+const get2ndAnd3rd = myArray => [myArray[1],myArray[2]];
 
-function remainder(){
-  // this function is passed 2 arguments
-  // return the remainder of first
-  // argument when divided by the second
-}
+const mapper = ( myArray ) => myArray.map(currentValue=> currentValue+=1 );
 
-function exponential(){
-  // this function is passed 2 arguments
-  // return first argument to the power of second argument
-  // hint: you may need to look up the exponention operator
-}
+const wordLengths = words => words.map(word => word.length );
 
-function laxEquality(){
-  // this function is passed 2 arguments
-  // return true if they are equal but not strictly equal
-}
+const cities = ( capitals, formatter ) => capitals.map(formatter);
 
-function strictEqual(){
-  // function is passed 3 arguments
-  // return true if they are all strictly equal and false otherwise
-}
+const largerThanTen = numbers => numbers.filter(number => number>10);
 
-function smaller(){
-  // this function is passed 2 arguments
-  // return true if second argument is
-  // greater than or equal to first, otherwise return string 'smaller'
-}
+const even = numbers => numbers.filter(number => number %2 === 0);
 
-function isDivisibleBy(divider1, divider2, number){
-  // if number is divisible by divider1 or divider2 return true or false otherwise
-  // do not use if/else or ternary
-}
+const findTheNeedle = words => words.indexOf("needle");
 
-function evens(){
-  // this function is passed 4 numbers
-  // return true if all numbers are even or false otherwise
-  // do not use if/else or ternary
-}
+const findLargest = numbers => Math.max(...numbers);
 
-function removeMiddle( words ){
-  // words is an array which contains an odd number of strings
-  // return a new array containing only the middle word
-  // the words array should no longer contain the middle word
-  // hint: splice
-}
-
-function get2ndAnd3rd( myArray ){
-  // myArray is an array of numbers
-  // return an array containing the 2nd and 3rd items from myArray
-  // myArray should remain unchanged
-  // hint: slice
-}
-
-function mapper( myArray ){
-  // myArray is an array of numbers
-  // return a new array which has all items in myArray incremented by one
-  // myArray should remain unchanged
-}
-
-function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
-}
-
-function cities( capitals, formatter ){
-  // capitals is an array of objects that have a city and country property
-  // for example
-  // {
-  //   city: 'Paris',
-  //   country: 'France'
-  // }
-  // formatter is a function that transforms a capital object into a sentence returns it
-  // such as 'Paris is the capital of France'
-
-  // apply formatter to each object in capitals array and return an array of resulting sentences
-}
-
-function largerThanTen( numbers ){
-  // numbers is an array of numbers
-  // return a new array that contains only numbers from the input array which are greater than 10
-  // hint: filter
-}
-
-function even( numbers ){
-  // numbers is an array of numbers
-  // return a new array that contains only even numbers from the input array
-  // hint: you may want to use the modulus operator '%'
-}
-
-function findTheNeedle( words ){
-  // words is an array of words
-  // return the index of the word 'needle'
-  // hint: indexOf
-}
-
-function findLargest( numbers ){
-  // numbers is an array of numbers
-  // return the largest number from that array
-}
-
-function addAllnumbers( numbers ) {
+const addAllnumbers=  numbers => numbers.reduce((acc,e)=> acc+=e ,0);
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
-}
 
-function averages( things ) {
+const averages = things => +(things.filter(e=> typeof e === 'number').reduce((acc,e,i,arr)=> acc+=e/arr.length,0).toFixed(0));
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
-}
 
-function sortingStrings(strings){
+
+const sortingStrings= strings => strings.sort();
   // things is an array of sortingStrings
   // sort them in alphabetical order and return the sorted array
-}
 
-function sortingNumbers(numbers){
+
+const sortingNumbers = numbers => numbers.sort((a,b)=> a-b);
   // things is an array of sortingStrings
   // sort them in ascending order and return the sorted array
-}
 
-function sortingNumbersDescending(numbers){
+
+const sortingNumbersDescending= numbers => numbers.sort((a,b)=> b-a);
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
-}
 
-function sortingCars(cars){
+
+const sortingCars= cars => cars.sort((car1,car2)=> car1.year - car2.year);
   // a car object has a make, model, year. For example
   // const car = {
   //   make: 'Ford',
@@ -150,9 +77,12 @@ function sortingCars(cars){
   //
   // cars is an array of car objects. Sort them ascending by year and return
   // the sorted array.
-}
 
-function deleteColour( car ){
+
+const deleteColour= car => { 
+  delete car.color;
+  return car;
+}
   // car is an object with properties make, model and color. For example
   // {
   //   make: 'Ford',
@@ -161,9 +91,15 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
-};
 
-function paintShop( cars, colour ){
+
+const paintShop= ( cars, colour )=> {
+  return cars.map(car=>{
+    let newcar = JSON.parse(JSON.stringify(car))
+    if (newcar.make==="Ford") newcar.colour= colour;
+    return newcar;
+  });
+}
   // cars is an array of objects that have
   // their properties are `make`, `model` and `colour`
 
@@ -171,7 +107,7 @@ function paintShop( cars, colour ){
   // {
   //   make: 'Ford',
   //   model: 'Fiesta',
-  //   color: 'red'
+  //   colour: 'red'
   // }
 
   // set the colour of each Ford car to be the colour
@@ -179,15 +115,29 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
-}
 
-function secondLargest( numbers ){
+
+const secondLargest= numbers => {
+  const newNumbers = numbers.slice(0);
+  const secLar = newNumbers.sort((a,b)=>b-a)[1]
+  return numbers.indexOf(secLar);
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
 }
 
-function addSales( city, sales ){
+ 
+
+const addSales= ( city, sales )=> { 
+  const globalSales = {
+    london: 200,
+    paris: 300,
+    berlin: 150,
+    madrid: 400
+  };
+  globalSales.hasOwnProperty(city)? globalSales[city]+=sales : globalSales[city]=sales;
+  return globalSales
+}
   // Argument city is a string containing city name
   // Argument sales is a integer containing
   // We have object containing sales
@@ -196,21 +146,26 @@ function addSales( city, sales ){
   // to its total. If city does not exist, create a new
   // property and save the sales figure as its value.
   //
-  // const globalSales = {
-  //   london: 200,
-  //   paris: 300,
-  //   berlin: 150,
-  //   madrid: 400
-  // };
-}
+ 
 
-function totalSales( sales ){
+const totalSales= sales=> {
+  let total= 0;
+  for(let city in sales){
+    total += sales[city];
+  }
+  return total;
+}
   // You are passed a sales object similar to the one
   // in the previous exercise. Add up all the sales figures
   // and return the total.
-}
 
-function walletSum( wallet ){
+
+const walletSum=  wallet => {
+  let total= 0;
+  for(let note in wallet){
+    total += +(note) * wallet[note];
+  }
+  return total;
   // A wallet object has keys which are the denominations
   // and values which are the number of those notes in the
   // wallet. See example below.
@@ -225,24 +180,39 @@ function walletSum( wallet ){
   // the total.
 }
 
-function walletMerge( wallet1, wallet2 ){
+const walletMerge= ( wallet1, wallet2 )=> {
+  const newWallet= Object.assign({},wallet1);
+  for(let note in wallet2){
+    newWallet.hasOwnProperty(note)? newWallet[note] += wallet2[note]: newWallet[note]= wallet2[note];
+  }
+  return newWallet;
+}
   // return a new wallet object containing the contents of
   // both wallets passed in.
-}
 
-function arrayOfWallets( wallets ){
+const arrayOfWallets= wallets=> wallets.reduce((acc,wallet)=>{
+  for(let note in wallet){
+    acc.hasOwnProperty(note)? acc[note] += wallet[note]: acc[note] = wallet[note];
+  }
+  return acc;
+},{})
   // wallets is an array of wallets
 
   // Return a new wallet object containing the notes from all wallets
-}
 
-function crazyMoney( wallets ){
+
+const crazyMoney= wallets => wallets.reduce((acc,wallet)=>{
+    for(let note in wallet){
+      acc+= +(note) * wallet[note];
+    }
+    return acc;
+  },0)
   // In previous exercises the notes denominations were
   // limited to 5, 10 and 20. We now have wallets that
   // can have notes of any denomination. Implement a function
   // which accepts an array of random sized notes and
   // calculate the total amount of money in them.
-}
+
 
 module.exports = {
   add,
