@@ -1,11 +1,12 @@
 function add(a, b){
   // add the two arguments and return the sum
-  return a + b; 
+  return a + b;
 }
 
-function multiply(){
+function multiply(a, b, c, d){
   // this function is passed 4 paramers
   // multiply them and return the result
+  return a * b * c * d;
 }
 
 function average(){
