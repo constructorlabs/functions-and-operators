@@ -171,6 +171,10 @@ function findLargest( numbers ){
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  return numbers.reduce(reducer);
 }
 
 function averages( things ) {
