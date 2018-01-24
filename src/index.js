@@ -3,14 +3,16 @@ function add(a, b){
   return a + b;
 }
 
-function multiply(){
+function multiply(a,b,c,d){
   // this function is passed 4 paramers
   // multiply them and return the result
+  return a * b * c * d;
 }
 
-function average(){
+function average(a,b,c,d,e){
   // this function is passed 5 heights in meters
   // calculate their average and return it
+  return (a + b + c + d + e) / 5;
 }
 
 function remainder(){
