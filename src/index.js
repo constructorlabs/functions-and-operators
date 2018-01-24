@@ -175,16 +175,23 @@ function averages( things ) {
 function sortingStrings(strings){
   // things is an array of sortingStrings
   // sort them in alphabetical order and return the sorted array
+  return strings.sort();
 }
 
 function sortingNumbers(numbers){
-  // things is an array of sortingStrings
+  // things is an array of numbers
   // sort them in ascending order and return the sorted array
+  return numbers.sort(function(a,b) {
+    return a - b;
+  })
 }
 
 function sortingNumbersDescending(numbers){
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
+  return numbers.sort(function(a,b) {
+    return b - a;
+  })
 }
 
 function sortingCars(cars){
@@ -197,6 +204,9 @@ function sortingCars(cars){
   //
   // cars is an array of car objects. Sort them ascending by year and return
   // the sorted array.
+  return cars.sort(function(a,b) {
+    return a.year - b.year;
+  })
 }
 
 function deleteColour( car ){
@@ -208,7 +218,9 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
-};
+  delete car.colour;
+  return car;
+}
 
 function paintShop( cars, colour ){
   // cars is an array of objects that have
@@ -218,7 +230,7 @@ function paintShop( cars, colour ){
   // {
   //   make: 'Ford',
   //   model: 'Fiesta',
-  //   color: 'red'
+  //   colour: 'red'
   // }
 
   // set the colour of each Ford car to be the colour
@@ -226,12 +238,20 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+  let newcars=JSON.parse(JSON.stringify(cars));
+  newcars.forEach(function(x){
+    x.colour=colour;
+  });
+  return newcars;
 }
 
 function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
+  let nums = [...numbers];
+  nums.sort((a,b) => b - a);
+  return numbers.indexOf(nums[1]);
 }
 
 function addSales( city, sales ){
@@ -243,18 +263,32 @@ function addSales( city, sales ){
   // to its total. If city does not exist, create a new
   // property and save the sales figure as its value.
   //
-  // const globalSales = {
-  //   london: 200,
-  //   paris: 300,
-  //   berlin: 150,
-  //   madrid: 400
-  // };
+  const globalSales = {
+    london: 200,
+    paris: 300,
+    berlin: 150,
+    madrid: 400
+  };
+
+if (globalSales[city]) {
+  globalSales[city] += sales;
+} else {
+  globalSales[city] = sales
+}
+
+  return globalSales;
 }
 
 function totalSales( sales ){
   // You are passed a sales object similar to the one
   // in the previous exercise. Add up all the sales figures
   // and return the total.
+  let cities = Object.keys(sales);
+  let total = 0;
+  cities.forEach(function(currentKey) {
+    total += sales[currentKey];
+  });
+  return total;
 }
 
 function walletSum( wallet ){
@@ -270,16 +304,43 @@ function walletSum( wallet ){
   //
   // calculate the sum of money in the wallet and return
   // the total.
+  let cash = Object.keys(wallet);
+  let total = 0;
+  cash.forEach(function(currentNote){
+    total += currentNote*wallet[currentNote]
+  });
+  return total;
 }
 
 function walletMerge( wallet1, wallet2 ){
   // return a new wallet object containing the contents of
   // both wallets passed in.
+
+  let wallet3=JSON.parse(JSON.stringify(wallet1));
+  let x = Object.keys(wallet2);
+  x.forEach(function(currentKey){
+    wallet3[currentKey]+=wallet2[currentKey]
+  });
+  return wallet3
 }
 
 function arrayOfWallets( wallets ){
   // wallets is an array of wallets
+  let summedWallet = {
+    5: 0,
+    10: 0,
+    20: 0
+  };
 
+  wallets.forEach(function(currentWallet) {
+    let notes = Object.keys(currentWallet);
+
+    notes.forEach(function(currentNote) {
+      summedWallet[currentNote] += currentWallet[currentNote];
+    });
+  });
+
+  return summedWallet;
   // Return a new wallet object containing the notes from all wallets
 }
 
@@ -289,6 +350,27 @@ function crazyMoney( wallets ){
   // can have notes of any denomination. Implement a function
   // which accepts an array of random sized notes and
   // calculate the total amount of money in them.
+
+  let summedWallet = {};
+
+  wallets.forEach(function(currentWallet) {
+    let notes = Object.keys(currentWallet);
+
+    notes.forEach(function(currentNote) {
+      if (summedWallet[currentNote]) {
+        summedWallet[currentNote] += currentWallet[currentNote];
+      } else {
+        summedWallet[currentNote] = currentWallet[currentNote];
+      }
+    });
+  });
+
+  let cash = Object.keys(summedWallet);
+  let total = 0;
+  cash.forEach(function(currentCash){
+    total += currentCash*summedWallet[currentCash];
+  });
+  return total;
 }
 
 module.exports = {
