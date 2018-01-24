@@ -297,13 +297,13 @@ test('Sorting cars', () => {
     model: 'fiesta',
     year: 1994
   }, {
-    make: 'tesla',
-    model: 'roadster',
-    year: 2020
-  }, {
     make: 'toyota',
     model: 'prius',
     year: 2011
+  }, {
+    make: 'tesla',
+    model: 'roadster',
+    year: 2020
   }];
 
   const output = sortingCars(cars);
@@ -315,7 +315,7 @@ test('Delete colour', () => {
   const car = {
     make: 'Ford',
     model: 'Mondeo',
-    color: 'gold'
+    colour: 'gold'
   };
   const expected = {
     make: 'Ford',
@@ -328,13 +328,6 @@ test('Delete colour', () => {
 });
 
 test('Paint shop', () => {
-  const cars = [
-    { make: 'Ford', model: 'Fiesta', colour: 'Red' },
-    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
-    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
-    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
-  ];
-
   const unpaintedCars = [
     { make: 'Ford', model: 'Fiesta', colour: 'Red' },
     { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
@@ -344,15 +337,14 @@ test('Paint shop', () => {
 
   const repaintedCars = [
     { make: 'Ford', model: 'Fiesta', colour: 'Pink' },
-    { make: 'Land Rover', model: 'Defender', colour: 'Muddy' },
-    { make: 'Toyota', model: 'Prius', colour: 'Silver' },
-    { make: 'Honda', model: 'Civic', colour: 'Yellow' }
+    { make: 'Land Rover', model: 'Defender', colour: 'Pink' },
+    { make: 'Toyota', model: 'Prius', colour: 'Pink' },
+    { make: 'Honda', model: 'Civic', colour: 'Pink' }
   ];
 
-  const output = paintShop( cars, 'Pink' );
+  const output = paintShop( unpaintedCars, 'Pink' );
 
   expect( output ).toEqual( repaintedCars );
-  expect( cars ).toEqual( unpaintedCars );
 });
 
 test('Second largest', () => {
