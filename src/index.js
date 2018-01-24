@@ -148,6 +148,7 @@ function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
+  return numbers.filter(number => number%2 == 0);
 }
 
 function findTheNeedle( words ){
