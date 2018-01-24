@@ -370,10 +370,10 @@ function arrayOfWallets( wallets ){
 
   var walletNew = {};
 
-  for (var i =0 ; i< wallets.length; i++){
-    var walletDenomination = Object.keys(wallets[i]);
+  for (var i =0 ; i< wallets.length; i++){          // loops through the array of objects
+    var walletDenomination = Object.keys(wallets[i]); // array with keys of the Object
 
-    for (var j = 0; j < walletDenomination.length; j++){
+    for (var j = 0; j < walletDenomination.length; j++){    // loops through the object i properties
       if (walletNew.hasOwnProperty(walletDenomination[j])){
         var amount = wallets[i][walletDenomination[j]]
         walletNew[walletDenomination[j]] = walletNew[walletDenomination[j]] + amount;
@@ -388,20 +388,6 @@ function arrayOfWallets( wallets ){
   return walletNew;
 
   }
-  debugger;
-  arrayOfWallets([{
-    5: 2,
-    10: 3,
-    20: 8
-  }, {
-    5: 2,
-    10: 1,
-    20: 0
-  },{
-    5: 0,
-    10: 3,
-    20: 4
-  }]);
 
 
 function crazyMoney( wallets ){
@@ -410,6 +396,8 @@ function crazyMoney( wallets ){
   // can have notes of any denomination. Implement a function
   // which accepts an array of random sized notes and
   // calculate the total amount of money in them.
+   var combined = arrayOfWallets(wallets);
+   return walletSum(combined);
 }
 
 module.exports = {
