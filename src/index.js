@@ -156,21 +156,31 @@ function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+let numbers = things.filter(x => typeof(x)==="number");
+let numberSum = (accumulator, currentValue) => accumulator + currentValue;
+let numberTotal = numbers.reduce(numberSum);
+return numberTotal/numbers.length;
+
 }
 
 function sortingStrings(strings){
   // things is an array of sortingStrings
   // sort them in alphabetical order and return the sorted array
+ return strings.sort();
 }
 
 function sortingNumbers(numbers){
   // things is an array of sortingStrings
   // sort them in ascending order and return the sorted array
+let sortedNumbers = numbers.sort(function(a,b){return a - b;});
+return sortedNumbers;
 }
 
 function sortingNumbersDescending(numbers){
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
+  let sorteddescendingNumbers = numbers.sort(function(a,b){return b - a;});
+  return sorteddescendingNumbers;
 }
 
 function sortingCars(cars){
@@ -183,6 +193,8 @@ function sortingCars(cars){
   //
   // cars is an array of car objects. Sort them ascending by year and return
   // the sorted array.
+  let sortCaryear = cars.sort (function(a,b){return a.year -  b.year;});
+  return sortCaryear;
 }
 
 function deleteColour( car ){
@@ -194,6 +206,8 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
+   delete car.color;
+   return car;
 };
 
 function paintShop( cars, colour ){
@@ -212,13 +226,38 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+/*const cloneCars = cars.map(  function (car){
+      let carClone = Object.assign ({},car);
+      if (car.make === 'Ford'){
+        car.colour = colour;
+      }
+      return carClone;
+  });*/
+
+const cloneCars = cars.map(car => Object.assign({},car));
+let changeCars = cloneCars.map(function(car){
+  if (car.make === "Ford"){
+    car.colour = colour;
+  }
+  return car;
+
+});
+  return changeCars;
 }
 
 function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
+let clone = numbers.slice(0);
+clone.sort(function(a,b){return a - b;});
+let secondtoLast = clone[clone.length -2];
+return numbers.indexOf(secondtoLast);
+
 }
+
+
+
 
 function addSales( city, sales ){
   // Argument city is a string containing city name
