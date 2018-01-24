@@ -1,6 +1,6 @@
 function add(a, b){
   // add the two arguments and return the sum
-  return a + b;
+  return a + b; 
 }
 
 function multiply(){
