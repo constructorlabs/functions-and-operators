@@ -233,6 +233,9 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
+
+   delete car.color;
+   return car;
 };
 
 function paintShop( cars, colour ){
