@@ -181,6 +181,10 @@ function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  var numbers = things.filter(item => typeof(item) == 'number');
+
+  return addAllnumbers(numbers) / numbers.length;
+
 }
 
 function paintShop( cars, colour ){
