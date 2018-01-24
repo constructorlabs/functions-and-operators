@@ -96,6 +96,12 @@ function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+  var outputArray = [];
+  for (var i = 0; i < myArray.length; i++){
+    var plusOne = myArray[i] + 1;
+    outputArray.push(plusOne);
+  }
+  return outputArray;
 }
 
 function wordLengths( words ){
