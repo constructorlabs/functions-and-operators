@@ -98,7 +98,6 @@ test('Smaller', () => {
   expect( result3 ).toEqual( 'smaller' );
 });
 
-
 test('Is divisible by', () => {
   const result1 = isDivisibleBy( 9, 4, 36 );
   expect( result1 ).toEqual( true );

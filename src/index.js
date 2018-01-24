@@ -44,23 +44,35 @@ function laxEquality(a, b){
 function strictEqual(a, b, c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+  if (a===b && a===c && b===c) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function smaller(){
+function smaller(a, b){
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  if (b >= a) {
+    return true;
+  } else {
+    return "smaller";
+  }
 }
 
 function isDivisibleBy(divider1, divider2, number){
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return number % divider1 === 0 || number % divider2 === 0;
 }
 
-function evens(){
+function evens(number1, number2, number3, number4){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return number1 % 2 === 0 && number2 % 2 === 0 && number3 % 2 === 0 && number4 % 2 === 0;
 }
 
 function removeMiddle( words ){
@@ -68,6 +80,7 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  return words.splice( Math.ceil(words.length / 2) - 1, 1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -75,18 +88,21 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  return myArray.slice(1,3);
 }
 
 function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+  return myArray.map(x=>x+1);
 }
 
 function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
+  return words.map(x=>x.length);
 }
 
 function cities( capitals, formatter ){
@@ -100,40 +116,60 @@ function cities( capitals, formatter ){
   // such as 'Paris is the capital of France'
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
+  return capitals.map(x=>formatter(x));
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
+  return numbers.filter(x=>x>10);
 }
 
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
   // hint: you may want to use the modulus operator '%'
+  return numbers.filter(x => x % 2 === 0);
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
+  return words.indexOf("needle");
 }
 
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+  return Math.max(...numbers);
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  let total = 0;
+  numbers.forEach(function(x) {
+    total = total + x;
+  });
+  return total;
 }
 
 function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  let total = 0;
+  let count = 0;
+  things.forEach(function(x) {
+    if (typeof x === "number") {
+      total = total + x;
+      count++;
+    }
+  });
+  return total/count;
+
 }
 
 function sortingStrings(strings){
