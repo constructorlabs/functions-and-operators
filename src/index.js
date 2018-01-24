@@ -3,70 +3,33 @@ function add(a, b){
   return a + b;
 }
 
-function multiply(){
-  // this function is passed 4 paramers
-  // multiply them and return the result
+const multiply = (a, b, c, d) => a*b*c*d;
+
+const average = (a, b, c, d, e) => ((a+b+c+d+e)/5);
+
+const remainder = (a,b) => a % b;
+
+const exponential = (a, b) => a**b;
+
+const laxEquality = (a, b) => a == b && a!== b;
+
+const strictEqual = (a, b, c) => a === b && b === c;
+
+const smaller = (a,b) => b >= a ? true:'smaller'
+
+const isDivisibleBy = (divider1, divider2, number) => number % divider1 === 0 || number % divider2 === 0;
+
+const evens = (a, b, c, d) => (a % 2 === 0) && (b % 2 === 0) && (c % 2 === 0) && (d % 2 === 0);
+
+const removeMiddle = words => {
+  const m = Math.floor(words.length() / 2);
+  words.splice(m,1);
+  return words;
 }
 
-function average(){
-  // this function is passed 5 heights in meters
-  // calculate their average and return it
-}
+const get2ndAnd3rd = myArray => [myArray[1],myArray[2]];
 
-function remainder(){
-  // this function is passed 2 arguments
-  // return the remainder of first
-  // argument when divided by the second
-}
-
-function exponential(){
-  // this function is passed 2 arguments
-  // return first argument to the power of second argument
-  // hint: you may need to look up the exponention operator
-}
-
-function laxEquality(){
-  // this function is passed 2 arguments
-  // return true if they are equal but not strictly equal
-}
-
-function strictEqual(){
-  // function is passed 3 arguments
-  // return true if they are all strictly equal and false otherwise
-}
-
-function smaller(){
-  // this function is passed 2 arguments
-  // return true if second argument is
-  // greater than or equal to first, otherwise return string 'smaller'
-}
-
-function isDivisibleBy(divider1, divider2, number){
-  // if number is divisible by divider1 or divider2 return true or false otherwise
-  // do not use if/else or ternary
-}
-
-function evens(){
-  // this function is passed 4 numbers
-  // return true if all numbers are even or false otherwise
-  // do not use if/else or ternary
-}
-
-function removeMiddle( words ){
-  // words is an array which contains an odd number of strings
-  // return a new array containing only the middle word
-  // the words array should no longer contain the middle word
-  // hint: splice
-}
-
-function get2ndAnd3rd( myArray ){
-  // myArray is an array of numbers
-  // return an array containing the 2nd and 3rd items from myArray
-  // myArray should remain unchanged
-  // hint: slice
-}
-
-function mapper( myArray ){
+const mapper = ( myArray ) => myArray.map(){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
