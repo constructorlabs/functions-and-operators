@@ -162,6 +162,10 @@ function findTheNeedle( words ){
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+  numbers.sort(function(a,b){
+    return b-a;
+  })
+  return numbers[0];
 }
 
 function addAllnumbers( numbers ) {
