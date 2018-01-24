@@ -187,6 +187,49 @@ function averages( things ) {
 
 }
 
+function sortingStrings(strings){
+  // things is an array of sortingStrings
+  // sort them in alphabetical order and return the sorted array
+
+  return strings.sort();
+
+}
+
+function sortingNumbers(numbers){
+  // things is an array of sortingStrings
+  // sort them in ascending order and return the sorted array
+  return numbers.sort(function (a,b){return a-b;});
+
+}
+
+function sortingNumbersDescending(numbers){
+  // things is an array of sortingStrings
+  // sort them in descending order and return the sorted array
+}
+
+function sortingCars(cars){
+  // a car object has a make, model, year. For example
+  // const car = {
+  //   make: 'Ford',
+  //   model: 'Fiesta',
+  //   year: 1994
+  // }
+  //
+  // cars is an array of car objects. Sort them ascending by year and return
+  // the sorted array.
+}
+
+function deleteColour( car ){
+  // car is an object with properties make, model and color. For example
+  // {
+  //   make: 'Ford',
+  //   model: 'Fiesta',
+  //   color: 'red'
+  // }
+
+  // delete the property colour and return car without this property
+};
+
 function paintShop( cars, colour ){
   // cars is an array of objects that have
   // their properties are `make`, `model` and `colour`
@@ -203,6 +246,23 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+
+  var outputArray = [];
+
+  for (var i =0 ; i< cars.length; i++){
+    if (cars[i].make == "Ford"){
+      var paintedCar = Object.assign({}, cars[i]);
+      paintedCar.colour = colour;
+      outputArray.push(paintedCar);
+    }
+    else {
+      outputArray.push(cars[i]);
+    }
+
+  }
+  return outputArray;
+
+
 }
 
 function secondLargest( numbers ){
@@ -290,6 +350,11 @@ module.exports = {
   findLargest,
   addAllnumbers,
   averages,
+  sortingStrings,
+  sortingNumbers,
+  sortingNumbersDescending,
+  sortingCars,
+  deleteColour,
   paintShop,
   secondLargest,
   addSales,

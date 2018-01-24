@@ -20,6 +20,11 @@ const {
   findLargest,
   addAllnumbers,
   averages,
+  sortingStrings,
+  sortingNumbers,
+  sortingNumbersDescending,
+  sortingCars,
+  deleteColour,
   paintShop,
   secondLargest,
   addSales,
@@ -237,6 +242,93 @@ test('Average', () => {
 
   expect( output ).toEqual( 5 );
 });
+
+
+test('Sorting strings', () => {
+  const companies = ['netflix', 'google', 'amazon', 'facebook', 'microsoft', 'apple'];
+  const expected = ['amazon', 'apple', 'facebook', 'google', 'microsoft', 'netflix' ];
+
+  const output = sortingStrings(companies);
+
+  expect( output ).toEqual( expected );
+});
+
+test('Sorting numbers', () => {
+  const numbers = [99, -2, 0, 101, 2, 3, 22, 37, 1, -11];
+  const expected = [-11,  -2, 0, 1, 2, 3, 22, 37, 99, 101];
+
+  const output = sortingNumbers(numbers);
+
+  expect( output ).toEqual( expected );
+});
+
+test('Sorting numbers descending', () => {
+  const numbers = [99, -2, 0, 101, 2, 3, 22, 37, 1, -11];
+  const expected = [101, 99, 37, 22, 3, 2, 1, 0, -2, -11];
+
+  const output = sortingNumbersDescending(numbers);
+
+  expect( output ).toEqual( expected );
+});
+
+test('Sorting cars', () => {
+  const cars = [{
+    make: 'tesla',
+    model: 'roadster',
+    year: 2020
+  }, {
+    make: 'ford',
+    model: 'fiesta',
+    year: 1994
+  }, {
+    make: 'reliant',
+    model: 'robin',
+    year: 1973
+  }, {
+    make: 'toyota',
+    model: 'prius',
+    year: 2011
+  }];
+
+  const expected = [{
+    make: 'reliant',
+    model: 'robin',
+    year: 1973
+  }, {
+    make: 'ford',
+    model: 'fiesta',
+    year: 1994
+  }, {
+    make: 'tesla',
+    model: 'roadster',
+    year: 2020
+  }, {
+    make: 'toyota',
+    model: 'prius',
+    year: 2011
+  }];
+
+  const output = sortingCars(cars);
+
+  expect( output ).toEqual( expected );
+});
+
+test('Delete colour', () => {
+  const car = {
+    make: 'Ford',
+    model: 'Mondeo',
+    color: 'gold'
+  };
+  const expected = {
+    make: 'Ford',
+    model: 'Mondeo',
+  };
+
+  const output = deleteColour(car);
+
+  expect( output ).toEqual( expected );
+});
+
 
 test('Paint shop', () => {
   const cars = [
