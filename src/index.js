@@ -29,53 +29,19 @@ const removeMiddle = words => {
 
 const get2ndAnd3rd = myArray => [myArray[1],myArray[2]];
 
-const mapper = ( myArray ) => myArray.map(){
-  // myArray is an array of numbers
-  // return a new array which has all items in myArray incremented by one
-  // myArray should remain unchanged
-}
+const mapper = ( myArray ) => myArray.map(currentValue=> currentValue+=1 );
 
-function wordLengths( words ){
-  // words is an array of strings
-  // return a new array that contains the number of letters in each word
-  // hint: strings have a 'length' property
-}
+const wordLengths = words => words.map(word => word.length );
 
-function cities( capitals, formatter ){
-  // capitals is an array of objects that have a city and country property
-  // for example
-  // {
-  //   city: 'Paris',
-  //   country: 'France'
-  // }
-  // formatter is a function that transforms a capital object into a sentence returns it
-  // such as 'Paris is the capital of France'
+const cities = ( capitals, formatter ) => capitals.map(formatter);
 
-  // apply formatter to each object in capitals array and return an array of resulting sentences
-}
+const largerThanTen = numbers => numbers.filter(number => number.length > 10);
 
-function largerThanTen( numbers ){
-  // numbers is an array of numbers
-  // return a new array that contains only numbers from the input array which are greater than 10
-  // hint: filter
-}
+const even = numbers => numbers.filter(number => number %2 === 0);
 
-function even( numbers ){
-  // numbers is an array of numbers
-  // return a new array that contains only even numbers from the input array
-  // hint: you may want to use the modulus operator '%'
-}
+const findTheNeedle = words => words.indexOf("needle");
 
-function findTheNeedle( words ){
-  // words is an array of words
-  // return the index of the word 'needle'
-  // hint: indexOf
-}
-
-function findLargest( numbers ){
-  // numbers is an array of numbers
-  // return the largest number from that array
-}
+const findLargest = numbers => Math.max(...numbers);
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
