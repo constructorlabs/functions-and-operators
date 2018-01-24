@@ -49,10 +49,16 @@ function strictEqual(a, b, c){
   return a === b && b === c;
 }
 
-function smaller(){
+function smaller(a, b){
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  if(b >= a){
+    return true;
+  }
+  else{
+    return 'smaller';
+  }
 }
 
 function isDivisibleBy(divider1, divider2, number){
