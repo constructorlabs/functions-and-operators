@@ -126,6 +126,19 @@ function cities( capitals, formatter ){
   // such as 'Paris is the capital of France'
 
   // apply formatter to each object in capitals array and return an array of resulting sentences
+  var outputArray = [];
+
+  for (var i = 0; i < capitals.length; i++){
+    var city = capitals[i].city;
+    console.log(city);
+    var country = capitals[i].country;
+console.log(country);
+    var sentence = formatter({city, country});
+console.log(sentence);
+    outputArray.push(sentence);
+  }
+  console.log(outputArray);
+  return outputArray;
 }
 
 function largerThanTen( numbers ){
