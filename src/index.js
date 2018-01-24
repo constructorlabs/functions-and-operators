@@ -155,6 +155,8 @@ function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
   // hint: indexOf
+
+  return words.indexOf("needle");
 }
 
 function findLargest( numbers ){
