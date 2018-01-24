@@ -130,14 +130,10 @@ function cities( capitals, formatter ){
 
   for (var i = 0; i < capitals.length; i++){
     var city = capitals[i].city;
-    console.log(city);
     var country = capitals[i].country;
-console.log(country);
     var sentence = formatter({city, country});
-console.log(sentence);
     outputArray.push(sentence);
   }
-  console.log(outputArray);
   return outputArray;
 }
 
@@ -145,6 +141,7 @@ function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers from the input array which are greater than 10
   // hint: filter
+  return numbers.filter(number => number > 10);
 }
 
 function even( numbers ){
