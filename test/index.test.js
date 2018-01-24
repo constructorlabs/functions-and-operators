@@ -225,7 +225,7 @@ test('Find largest number', () => {
   expect(output).toEqual( expected );
 });
 
-test('Add all numbers', () => {
+test.only('Add all numbers', () => {
   const numbers = [ 9, 23, 10, 3, 8 ];
   const expected = 53;
 
