@@ -315,6 +315,11 @@ function totalSales( sales ){
   // You are passed a sales object similar to the one
   // in the previous exercise. Add up all the sales figures
   // and return the total.
+
+  var saleValues = Object.values(sales);
+  return addAllnumbers(saleValues);
+
+
 }
 
 function walletSum( wallet ){
