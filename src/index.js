@@ -108,6 +108,11 @@ function wordLengths( words ){
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // hint: strings have a 'length' property
+  var outputArray = [];
+  for (var i = 0; i < words.length; i++){
+    outputArray.push(words[i].length);
+  }
+  return outputArray;
 }
 
 function cities( capitals, formatter ){
