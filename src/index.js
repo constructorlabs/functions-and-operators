@@ -277,23 +277,38 @@ function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
+
+  var orderedArr = [].concat(numbers).sort(function (a,b) {return b-a;});
+  var highestNr = orderedArr[1];
+  return numbers.indexOf(highestNr);
 }
 
 function addSales( city, sales ){
   // Argument city is a string containing city name
   // Argument sales is a integer containing
+  //
   // We have object containing sales
   //
   // If city already exists in object add sales figure
   // to its total. If city does not exist, create a new
   // property and save the sales figure as its value.
   //
-  // const globalSales = {
-  //   london: 200,
-  //   paris: 300,
-  //   berlin: 150,
-  //   madrid: 400
-  // };
+  const globalSales = {
+    london: 200,
+    paris: 300,
+    berlin: 150,
+    madrid: 400
+  };
+
+  if(globalSales.hasOwnProperty(city)){
+    globalSales[city] = globalSales[city] + sales;
+  }
+  else{
+    globalSales[city] = sales;
+  }
+  return globalSales;
+
+
 }
 
 function totalSales( sales ){
