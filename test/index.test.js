@@ -299,13 +299,14 @@ test('Sorting cars', () => {
     model: 'fiesta',
     year: 1994
   }, {
-    make: 'tesla',
-    model: 'roadster',
-    year: 2020
-  }, {
     make: 'toyota',
     model: 'prius',
     year: 2011
+  },
+  {
+    make: 'tesla',
+    model: 'roadster',
+    year: 2020
   }];
 
   const output = sortingCars(cars);
