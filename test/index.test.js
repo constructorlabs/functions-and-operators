@@ -217,7 +217,7 @@ test('Find the needle', () => {
   expect(output).toEqual( expected );
 });
 
-test.only('Find largest number', () => {
+test('Find largest number', () => {
   const numbers = [ 3, 21, 88, 4, 36];
   const expected = 88;
 
@@ -225,7 +225,7 @@ test.only('Find largest number', () => {
   expect(output).toEqual( expected );
 });
 
-test('Add all numbers', () => {
+test.only('Add all numbers', () => {
   const numbers = [ 9, 23, 10, 3, 8 ];
   const expected = 53;
 

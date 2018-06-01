@@ -183,6 +183,9 @@ function findLargest( numbers ){
 }
 
 function addAllnumbers( numbers ) {
+  return numbers.reduce(function (acc,item) {
+    return acc + item;
+  });
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
 }
