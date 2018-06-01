@@ -81,6 +81,8 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  let newArr = myArray.slice(1, 3);
+  return newArr;
 }
 
 function mapper( myArray ){
