@@ -151,26 +151,50 @@ function findTheNeedle( words ){
   let index = words.findIndex(function(word){
     return word === "needle"
 
-  })
+  });
   return index
 
-}
+};
 
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
-}
+
+  let maxNum = numbers.filter( function( num ) {
+    return Math.max( num );
+  } );
+
+return maxNum; 
+
+};
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  let numSum = numbers.reduce(function(acc, item) {
+        return acc + item;
+  } , 0 );
+return numSum;
 }
 
 function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  let newArr = things.filter(function(num) {
+    return typeof num === "number";
+  });
+
+  let arrLen = newArr.length
+  let arrSum = newArr.reduce(function(acc, item ) {
+    return acc + item;
+  } , 0 );
+
+return arrSum / arrLen;
+
 }
+
+
 
 function sortingStrings(strings){
   // strings is an array of strings

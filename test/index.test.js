@@ -209,7 +209,7 @@ test('Get even numbers', () => {
   expect(output).toEqual( expected );
 });
 
-test.only('Find the needle', () => {
+test('Find the needle', () => {
   const words = [ 'house', 'train', 'slide', 'needle', 'book' ];
   const expected = 3;
 
@@ -234,7 +234,7 @@ test('Add all numbers', () => {
   expect( output ).toEqual( 53 );
 });
 
-test('Averages', () => {
+test.only('Averages', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
   const expected = 53;
 
