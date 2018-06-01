@@ -198,11 +198,15 @@ function sortingStrings(strings){
 function sortingNumbers(numbers){
   // things is an array of sortingStrings
   // sort them in ascending order and return the sorted array
+  return numbers.sort(function(a,b){
+    return a-b;
+  });
 }
 
 function sortingNumbersDescending(numbers){
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
+
 }
 
 function sortingCars(cars){
