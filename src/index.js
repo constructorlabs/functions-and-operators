@@ -128,7 +128,11 @@ function wordLengths( words ){
   // [ 7, 4, 6]
 }
 
+
 function cities( capitals, formatter ){
+
+  return capitals.map(formatter);
+
   // capitals is an array of objects that have a city and country property
   // for example
   // {
@@ -141,6 +145,8 @@ function cities( capitals, formatter ){
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
 }
+
+
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
