@@ -102,6 +102,11 @@ function get2ndAnd3rd( myArray ){
 }
 
 function mapper( myArray ){
+  let result = myArray.map(function(num){
+    return num + 1;
+  });
+
+  return result;
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged

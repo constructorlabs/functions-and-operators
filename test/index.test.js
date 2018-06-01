@@ -139,7 +139,7 @@ test('Remove middle', () => {
   expect(words).toEqual(expectedWords);
 });
 
-test.only('Get second and third', () => {
+test('Get second and third', () => {
   const numbers = [ 90, 5, 11, 5, 6 ];
 
   const expectedOutput = [ 5, 11];
@@ -163,7 +163,7 @@ test('Add 1 to each item in myArray', () => {
   expect(myArray).toEqual(unchanged);
 });
 
-test('Get word lengths', () => {
+test.only('Get word lengths', () => {
   const words = [ 'sun', 'potato', 'roundabout', 'pizza' ];
   const expected = [ 3, 6, 10, 5 ];
 
