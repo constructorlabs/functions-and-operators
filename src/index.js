@@ -150,11 +150,29 @@ function findTheNeedle( words ){
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+/*  let max = numbers[0];
+  for(let i = 0; i < numbers.length; i++){
+  if(numbers[i] > max){
+    max = numbers[i];
+  }
+
+  }
+  return max; */
+
+  return numbers.reduce(function(acc,item){
+    if (item>acc){
+      return item;
+    }
+    return acc;
+  },numbers[0]);
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  return numbers.reduce(function(acc,item){
+    return acc+item;
+  },0)
 }
 
 function averages( things ) {
