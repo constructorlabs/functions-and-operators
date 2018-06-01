@@ -227,6 +227,10 @@ function sortingNumbersDescending(numbers){
 }
 
 function sortingCars(cars){
+  return cars.sort(function(a, b) {
+    return a.year - b.year;
+  });
+
   // a car object has a make, model, year. For example
   // const car = {
   //   make: 'Ford',
