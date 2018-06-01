@@ -65,7 +65,7 @@ test('Exponential', () => {
   expect( result ).toEqual( 2401 );
 });
 
-test('Lax equality ', () => {
+test.only('Lax equality ', () => {
   const result = laxEquality( 10, "10" );
   expect( result ).toEqual( true );
 
