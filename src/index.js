@@ -134,11 +134,17 @@ function largerThanTen( numbers ){
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  return numbers.filter(function(item){
+    return item % 2 === 0;
+  });
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
+  return words.find(function(item){
+    return item === "needle";
+  });
 }
 
 function findLargest( numbers ){
