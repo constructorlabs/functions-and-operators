@@ -127,7 +127,7 @@ test('Evens', () => {
   expect( result4 ).toEqual( false );
 });
 
-test.only('Remove middle', () => {
+test('Remove middle', () => {
   const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
 
   const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];

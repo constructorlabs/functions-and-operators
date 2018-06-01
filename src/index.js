@@ -90,12 +90,19 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  let twoAndThree = myArray.slice(1,3);
+  return twoAndThree;
 }
 
 function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+  let newArr = myArray.map(function(num){
+      num += 1;
+      return num;
+  });
+    return newArr;
 }
 
 function wordLengths( words ){
@@ -106,6 +113,11 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  let newArr = words.map(function(num){
+    num = num.length;
+    return num;
+  });
+  return newArr;
 }
 
 function cities( capitals, formatter ){
