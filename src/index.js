@@ -45,7 +45,11 @@ if (a === b) {
 function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
-  return a === b === c;
+  if ((a === b) && (b === c)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function smaller(){
