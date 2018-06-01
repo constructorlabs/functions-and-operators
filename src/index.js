@@ -81,14 +81,17 @@ function evens(a, b, c, d){
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
 }
-console.log(evens( 8, 8 ));
+
 
 function removeMiddle( words ){
+  return words.splice(Math.floor(words.length/2), 1);
+
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
 }
+
 
 function get2ndAnd3rd( myArray ){
   // myArray is an array of numbers

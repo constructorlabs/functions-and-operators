@@ -113,7 +113,7 @@ test('Is divisible by', () => {
   expect( result4 ).toEqual( true );
 });
 
-test.only('Evens', () => {
+test('Evens', () => {
   const result1 = evens( 7, 7, 7, 7 );
   expect( result1 ).toEqual( false );
 
@@ -127,7 +127,7 @@ test.only('Evens', () => {
   expect( result4 ).toEqual( false );
 });
 
-test('Remove middle', () => {
+test.only('Remove middle', () => {
   const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
 
   const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];
