@@ -169,6 +169,7 @@ function even( numbers ){
 }
 
 function findTheNeedle( words ){
+  return words.indexOf ('needle');
   // words is an array of words
   // return the index of the word 'needle'
 }
