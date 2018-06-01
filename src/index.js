@@ -158,9 +158,14 @@ function largerThanTen( numbers ){
   return newArr;
 }
 
+
 function even( numbers ){
+  let newArr = numbers.filter (function (num) {
+    return num % 2 === 0;
+  });
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  return newArr;
 }
 
 function findTheNeedle( words ){
