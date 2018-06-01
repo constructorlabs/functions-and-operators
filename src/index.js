@@ -151,13 +151,16 @@ function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
   var position = words.indexOf("needle");
-  
+
   return position;
 };
 
 function findLargest( numbers ){
   // numbers is an array of numbers
-  // return the largest number from that array
+  var sorted = numbers.sort(function (a,b){
+    return a - b;
+  });
+  return sorted[sorted.length -1];// return the largest number from that array
 }
 
 function addAllnumbers( numbers ) {
