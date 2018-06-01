@@ -22,10 +22,11 @@ function remainder(first, second){
   return first%second;
 }
 
-function exponential(){
+function exponential(first, second){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return first ** second;
 }
 
 function laxEquality(){
