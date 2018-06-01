@@ -222,7 +222,11 @@ function sortingCars(cars){
   //
   // cars is an array of car objects. Sort them ascending by year and return
   // the sorted array.
-}
+  return cars.sort(function(a,b){
+    return a.year - b.year;
+  });
+
+  }
 
 function deleteColour( car ){
   // car is an object with properties make, model and color. For example
