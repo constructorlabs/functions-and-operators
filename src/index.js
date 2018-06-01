@@ -94,6 +94,7 @@ function removeMiddle( words ){
 
 
 function get2ndAnd3rd( myArray ){
+    return myArray.slice(1, 3);
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
