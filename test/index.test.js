@@ -53,13 +53,13 @@ test('Average', () => {
   expect( parseFloat( Number( result ).toFixed( 3 ) ) ).toEqual( 1.836 );
 });
 
-test.only('Remainder', () => {
+test('Remainder', () => {
   const result = remainder( 17, 5 );
 
   expect( result ).toEqual( 2 );
 });
 
-test('Exponential', () => {
+test.only('Exponential', () => {
   const result = exponential( 7, 4 );
 
   expect( result ).toEqual( 2401 );
