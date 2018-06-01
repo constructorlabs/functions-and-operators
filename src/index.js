@@ -175,6 +175,9 @@ function findTheNeedle( words ){
 }
 
 function findLargest( numbers ){
+  return numbers.reduce(function (acc, item){
+    return acc > item ? acc : item;
+  });
   // numbers is an array of numbers
   // return the largest number from that array
 }
