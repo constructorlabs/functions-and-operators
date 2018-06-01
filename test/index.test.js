@@ -41,7 +41,7 @@ test('Add', () => {
   expect( result ).toEqual( 5 );
 });
 
-test.only('Multiply', () => {
+test('Multiply', () => {
   const result = multiply( 4, 5, 3, 7 );
 
   expect( result ).toEqual( 420 );
@@ -59,7 +59,7 @@ test('Remainder', () => {
   expect( result ).toEqual( 2 );
 });
 
-test('Exponential', () => {
+test.only('Exponential', () => {
   const result = exponential( 7, 4 );
 
   expect( result ).toEqual( 2401 );

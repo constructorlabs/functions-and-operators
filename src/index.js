@@ -9,21 +9,25 @@ function multiply(a,b,c,d){
   return a * b * c * d;
 }
 
-function average(){
+function average(a,b,c,d,e){
   // this function is passed 5 heights in meters
   // calculate their average and return it
+  let total = 0;
+  return (a+b+c+d+e) / 5;
 }
 
-function remainder(){
+function remainder(a,b){
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return a % b;
 }
 
-function exponential(){
+function exponential(a,b){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return a ** b; 
 }
 
 function laxEquality(){
