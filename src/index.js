@@ -16,10 +16,11 @@ function average(a,b,c,d,e){
   return ((a + b + c + d +e )/ 5);
 }
 
-function remainder(){
+function remainder(a, b){
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return a % b;
 }
 
 function exponential(){

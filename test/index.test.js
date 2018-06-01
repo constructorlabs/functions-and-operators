@@ -47,13 +47,13 @@ test('Multiply', () => {
   expect( result ).toEqual( 420 );
 });
 
-test.only('Average', () => {
+test('Average', () => {
   const result = average( 2.2, 1.68, 1.76, 1.54, 2 );
 
   expect( parseFloat( Number( result ).toFixed( 3 ) ) ).toEqual( 1.836 );
 });
 
-test('Remainder', () => {
+test.only('Remainder', () => {
   const result = remainder( 17, 5 );
 
   expect( result ).toEqual( 2 );
