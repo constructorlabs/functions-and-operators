@@ -133,6 +133,10 @@ function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+  var bigger = numbers.filter(function(number){
+    return number > 10;
+  });
+  return bigger;
 }
 
 function even( numbers ){
