@@ -59,13 +59,13 @@ test('Remainder', () => {
   expect( result ).toEqual( 2 );
 });
 
-test.only('Exponential', () => {
+test('Exponential', () => {
   const result = exponential( 7, 4 );
 
   expect( result ).toEqual( 2401 );
 });
 
-test('Lax equality ', () => {
+test.only('Lax equality ', () => {
   const result = laxEquality( 10, "10" );
   expect( result ).toEqual( true );
 

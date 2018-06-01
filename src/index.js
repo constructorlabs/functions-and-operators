@@ -30,14 +30,22 @@ function exponential(a,b){
   return a**b;
 }
 
-function laxEquality(){
+function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+if (a === b) {
+  return false;
+} else {
+  return true;
 }
 
-function strictEqual(){
+
+}
+
+function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+  return a === b === c;
 }
 
 function smaller(){
