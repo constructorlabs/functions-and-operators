@@ -41,7 +41,7 @@ test('Add', () => {
   expect( result ).toEqual( 5 );
 });
 
-test('Multiply', () => {
+test.only('Multiply', () => {
   const result = multiply( 4, 5, 3, 7 );
 
   expect( result ).toEqual( 420 );
