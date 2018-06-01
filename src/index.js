@@ -150,7 +150,10 @@ function even( numbers ){
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
-}
+  var position = words.indexOf("needle");
+  
+  return position;
+};
 
 function findLargest( numbers ){
   // numbers is an array of numbers
