@@ -59,10 +59,11 @@ function isDivisibleBy(divider1, divider2, number){
   return (number % divider1 === 0) || (number % divider2 === 0);
 }
 
-function evens(){
+function evens(a,b,c,d){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return (a%2 === 0) && (b%2 === 0) && (c%2 === 0) && (d%2 === 0) ;
 }
 
 function removeMiddle( words ){
