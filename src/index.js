@@ -102,6 +102,9 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  return words.map(function(item){
+    return item.length;
+  });
 }
 
 function cities( capitals, formatter ){
