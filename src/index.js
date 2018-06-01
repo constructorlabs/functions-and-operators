@@ -259,12 +259,33 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+let newItem;
+
+
+return cars.map(function(item){
+if(item.make === "Ford" ){
+  newItem=Object.assign({},item);
+  newItem.color=colour;
+  return newItem;
+  }
+});
+
+})
 }
 
 function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
+  let counter=-1;
+  let copied = numbers.slice().sort(function(a,b){
+    return b - a;
+  });
+  return numbers.find(function(item){
+    counter++;
+    return copied[1] === item;
+  });
+  return counter;
 }
 
 function addSales( city, sales ){
