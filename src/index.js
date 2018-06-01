@@ -29,9 +29,10 @@ function exponential(first, second){
   return first ** second;
 }
 
-function laxEquality(){
+function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+  return a==b;
 }
 
 function strictEqual(){
