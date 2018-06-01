@@ -12,6 +12,11 @@ function multiply(a, b, c, d){
 function average(){
   // this function is passed 5 heights in meters
   // calculate their average and return it
+  let myArrFromArguments = Array.from(arguments);
+  let newArr = myArrFromArguments.reduce (function (acc,item){
+    return acc + item
+  });
+  return newArr/myArrFromArguments.length;
 }
 
 function remainder(){
