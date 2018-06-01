@@ -148,6 +148,12 @@ return newArr;
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
+  let index = words.findIndex(function(word){
+    return word === "needle"
+
+  })
+  return index
+
 }
 
 function findLargest( numbers ){
