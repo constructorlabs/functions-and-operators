@@ -234,7 +234,7 @@ test('Add all numbers', () => {
   expect( output ).toEqual( 53 );
 });
 
-test('Averages', () => {
+test.only('Averages', () => {
   const numbers = [ 4, '-', 8, 11, 'hello', '57', 0, 2 ];
   const expected = 53;
 
