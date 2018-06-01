@@ -68,6 +68,7 @@ test('Exponential', () => {
 test('Lax equality ', () => {
   const result = laxEquality( 10, "10" );
   expect( result ).toEqual( true );
+  // expect(laxEquality( 1000000, "10" )).toEqual( false );
 
   const result2 = laxEquality( 5, 5 );
   expect( result2 ).toEqual( false );
@@ -128,10 +129,10 @@ test('Evens', () => {
 });
 
 test('Remove middle', () => {
-  const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
+  const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle','window1', 'bottle2'];
 
-  const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];
-  const expectedOutput = [ 'queen' ];
+  const expectedWords = [ 'mouse', 'giraffe', 'queen', 'bottle','window1', 'bottle2'];
+  const expectedOutput = [ 'window' ];
 
   const output = removeMiddle( words );
 
@@ -209,7 +210,7 @@ test('Get even numbers', () => {
   expect(output).toEqual( expected );
 });
 
-test('Find the needle', () => {
+test.only('Find the needle', () => {
   const words = [ 'house', 'train', 'slide', 'needle', 'book' ];
   const expected = 3;
 
@@ -217,7 +218,7 @@ test('Find the needle', () => {
   expect(output).toEqual( expected );
 });
 
-test('Find largest number', () => {
+test.only('Find largest number', () => {
   const numbers = [ 3, 21, 88, 4, 36];
   const expected = 88;
 

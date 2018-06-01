@@ -3,53 +3,69 @@ function add(a, b){
   return a + b;
 }
 
-function multiply(){
+function multiply(a,b,c,d){
   // this function is passed 4 parameters
   // multiply them and return the result
+  return a * b * c * d;
 }
 
-function average(){
+function average(a,b,c,d,e){
   // this function is passed 5 heights in meters
   // calculate their average and return it
+
+  return (a + b + c + d + e )/ 5;
 }
 
-function remainder(){
+function remainder(a, b){
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return a % b;
 }
 
-function exponential(){
+function exponential(a,b){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return a ** b;
 }
 
-function laxEquality(){
+function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+
+  return a == b && a !== b;
 }
 
-function strictEqual(){
+function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+   return a === b && b === c;
+
 }
 
-function smaller(){
+function smaller(a,b){
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  if ( b >= a) {
+    return true;
+  }
+    return "smaller";
+
 }
 
 function isDivisibleBy(divider1, divider2, number){
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return number % divider1 === 0 || number % divider2 === 0;
 }
 
-function evens(){
+function evens(a,b,c,d){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return a % 2 === 0 && b % 2 === 0 && c % 2 === 0 && d % 2 === 0;
 }
 
 function removeMiddle( words ){
@@ -57,6 +73,8 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  var a = Math.floor(words.length / 2);
+  return words.splice(a, 1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -64,12 +82,20 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  var newArr = myArray.slice(1,3);
+  return newArr;
 }
 
 function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+  let newArray = myArray.map(function (item){
+    return item + 1;
+
+  });
+  return newArray;
+
 }
 
 function wordLengths( words ){
@@ -80,6 +106,10 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  let newArray = words.map(function(item){
+    return item.length;
+  });
+  return newArray;
 }
 
 function cities( capitals, formatter ){
@@ -94,27 +124,43 @@ function cities( capitals, formatter ){
   // 'Paris is the capital of France'.
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
+
+  return capitals.map(formatter);
+
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+  var bigger = numbers.filter(function(number){
+    return number > 10;
+  });
+  return bigger;
 }
 
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  return numbers.filter(function (item){
+    return item % 2 === 0;
+  });
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
-}
+  var position = words.indexOf("needle");
+
+  return position;
+};
 
 function findLargest( numbers ){
   // numbers is an array of numbers
-  // return the largest number from that array
+  var sorted = numbers.sort(function (a,b){
+    return a - b;
+  });
+  return sorted[sorted.length -1];// return the largest number from that array
 }
 
 function addAllnumbers( numbers ) {
