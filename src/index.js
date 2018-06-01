@@ -3,53 +3,67 @@ function add(a, b){
   return a + b;
 }
 
-function multiply(){
+function multiply(a,b,c,d){
   // this function is passed 4 parameters
   // multiply them and return the result
+  return a*b*c*d;
 }
 
-function average(){
+function average(a,b,c,d,e){
   // this function is passed 5 heights in meters
   // calculate their average and return it
+  return (a+b+c+d+e)/5;
 }
 
-function remainder(){
+function remainder(first, second){
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return first%second;
 }
 
-function exponential(){
+function exponential(first, second){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return first ** second;
 }
 
-function laxEquality(){
+function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+  return a==b;
 }
 
-function strictEqual(){
+function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+  return (a === b) && (b === c);
 }
 
-function smaller(){
+function smaller(first, second){
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  if (second >= first){
+    return true;
+  }else{
+    return "smaller";
+  }
+
 }
 
 function isDivisibleBy(divider1, divider2, number){
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return (number % divider1 === 0) || (number % divider2 === 0);
 }
 
-function evens(){
+function evens(a,b,c,d){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return (a%2 === 0) && (b%2 === 0) && (c%2 === 0) && (d%2 === 0) ;
 }
 
 function removeMiddle( words ){
@@ -57,6 +71,9 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  let middle=(words.length-1)/2
+ let newArray= words.splice(middle,1);
+ return newArray;
 }
 
 function get2ndAnd3rd( myArray ){
@@ -64,12 +81,17 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  return myArray.slice(1,3);
 }
 
 function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+   return myArray.map(function(item){
+    return item + 1;
+  });
+
 }
 
 function wordLengths( words ){
@@ -80,6 +102,9 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  return words.map(function(item){
+    return item.length;
+  });
 }
 
 function cities( capitals, formatter ){
@@ -94,53 +119,97 @@ function cities( capitals, formatter ){
   // 'Paris is the capital of France'.
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
+  return capitals.map(formatter);
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+  return number.filter(function(item){
+    return item > 10;
+  });
 }
 
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  return numbers.filter(function(item){
+    return item % 2 === 0;
+  });
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
+  return words.find(function(item){
+    return item === "needle";
+  });
 }
 
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+/*  let max = numbers[0];
+  for(let i = 0; i < numbers.length; i++){
+  if(numbers[i] > max){
+    max = numbers[i];
+  }
+
+  }
+  return max; */
+
+  return numbers.reduce(function(acc,item){
+    if (item>acc){
+      return item;
+    }
+    return acc;
+  },numbers[0]);
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  return numbers.reduce(function(acc,item){
+    return acc+item;
+  },0)
 }
 
 function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  let counter=0;
+  return (things.reduce(function(acc,item){
+    if (typeof item === "number"){
+      counter++;
+      return acc+item;
+    }
+    return acc;
+  },0) ) /counter;
 }
 
 function sortingStrings(strings){
   // strings is an array of strings
   // sort them in alphabetical order and return the sorted array
+  return strings.sort();
 }
 
 function sortingNumbers(numbers){
   // numbers is an array of numbers
   // sort them in ascending order and return the sorted array
+  return numbers.sort(function(a,b){
+    return a-b;
+  });
 }
 
 function sortingNumbersDescending(numbers){
   // numbers is an array of numbers
   // sort them in descending order and return the sorted array
+  return numbers.sort(function(a,b){
+    return b-a;
+  });
+
 }
 
 function sortingCars(cars){
@@ -153,7 +222,11 @@ function sortingCars(cars){
   //
   // cars is an array of car objects. Sort them ascending by year and return
   // the sorted array.
-}
+  return cars.sort(function(a,b){
+    return a.year - b.year;
+  });
+
+  }
 
 function deleteColour( car ){
   // car is an object with properties make, model and color. For example
@@ -164,7 +237,11 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
-};
+  for(let i=0;i<car.length;i++){
+    delete car[i].color;
+  }
+return car;
+}
 
 function paintShop( cars, colour ){
   // cars is an array of objects that have
@@ -182,12 +259,33 @@ function paintShop( cars, colour ){
 
   // the original array passed in should not change
   // hint: look up 'Cloning objects in JavaScript'
+let newItem;
+
+
+return cars.map(function(item){
+if(item.make === "Ford" ){
+  newItem=Object.assign({},item);
+  newItem.color=colour;
+  return newItem;
+  }
+});
+
+})
 }
 
 function secondLargest( numbers ){
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
+  let counter=-1;
+  let copied = numbers.slice().sort(function(a,b){
+    return b - a;
+  });
+  return numbers.find(function(item){
+    counter++;
+    return copied[1] === item;
+  });
+  return counter;
 }
 
 function addSales( city, sales ){
