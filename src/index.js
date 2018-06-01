@@ -48,7 +48,8 @@ function strictEqual(a,b,c){
   // return true if they are all strictly equal and false otherwise
 }
 
-function smaller(){
+function smaller(a,b){
+  return b >= a ? true : 'smaller';
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
