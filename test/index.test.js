@@ -151,7 +151,7 @@ test('Get second and third', () => {
   expect(numbers).toEqual(expectedNumbers);
 });
 
-test.only('Add 1 to each item in myArray', () => {
+test('Add 1 to each item in myArray', () => {
   const myArray = [ 31, 57, 12, 5];
 
   const unchanged = [ 31, 57, 12, 5];
@@ -171,7 +171,7 @@ test('Get word lengths', () => {
   expect(output).toEqual( expected );
 });
 
-test('Cities', () => {
+test.only('Cities', () => {
   const capitals = [
     { city: 'Paris', country: 'France' },
     { city: 'Madrid', country: 'Spain' },

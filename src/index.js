@@ -103,6 +103,10 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  let newArr = words.map(function(word) {
+    return word.length;
+  })
+  return newArr;
 }
 
 function cities( capitals, formatter ){
@@ -117,12 +121,17 @@ function cities( capitals, formatter ){
   // 'Paris is the capital of France'.
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
-}
+  let newArr = capitals.map(formatter);
+  return newArr;
+};
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+
+
+
 }
 
 function even( numbers ){
