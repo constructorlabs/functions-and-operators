@@ -193,7 +193,7 @@ test('Cities', () => {
   expect(result).toEqual(expected);
 });
 
-test.only('Get numbers greater than 10', () => {
+test('Get numbers greater than 10', () => {
   const numbers = [ 4, 10, 32, 9, 21];
   const expected = [ 32, 21 ];
 

@@ -150,21 +150,38 @@ function largerThanTen( numbers ){
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  let newArr = [];
+  let newNum = numbers.map(function(num){
+    if (num % 2 === 0){
+    newArr.push(num);
+  }
+    return num;
+  });
+    return newArr;
 }
 
 function findTheNeedle( words ){
   // words is an array of words
   // return the index of the word 'needle'
+  var needleFound = words.findIndex(function(item){
+    return item === "needle";
+  });
+  return needleFound;
 }
 
 function findLargest( numbers ){
   // numbers is an array of numbers
   // return the largest number from that array
+  return Math.max(...numbers);
 }
 
 function addAllnumbers( numbers ) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
+  let numSum = numbers.reduce(function(acc, num){
+    return acc + num;
+  }, 0);
+  return numSum;
 }
 
 function averages( things ) {
