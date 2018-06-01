@@ -113,6 +113,12 @@ function mapper( myArray ){
 }
 
 function wordLengths( words ){
+  let result = [];
+  words.forEach(function(item){
+    result.push(item.length);
+  });
+
+  return result;
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // for example
