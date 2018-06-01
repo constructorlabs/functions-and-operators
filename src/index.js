@@ -90,6 +90,12 @@ function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+  let newArray = myArray.map(function (item){
+    return item + 1;
+
+  });
+  return newArray;
+
 }
 
 function wordLengths( words ){
