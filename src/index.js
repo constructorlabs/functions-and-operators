@@ -132,12 +132,19 @@ function cities( capitals, formatter ){
   // 'Paris is the capital of France'.
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
+        const formatted = capitals.map(formatter)
+      //return formatter(this.city,this.country);
+        return formatted;
 }
 
 function largerThanTen( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+  let arr = numbers.filter(function(num){
+    return num > 10;
+  });
+  return arr;
 }
 
 function even( numbers ){
