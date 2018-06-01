@@ -56,6 +56,9 @@ function smaller(a,b){
 }
 
 function isDivisibleBy(divider1, divider2, number){
+    let firstTest = number % divider1 === 0;
+    let secondTest = number % divider2 === 0;
+    return firstTest || secondTest;
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
 }
