@@ -169,7 +169,7 @@ function even( numbers ){
 }
 
 function findTheNeedle( words ){
-  return words.indexOf ('needle');
+  return words.indexOf('needle');
   // words is an array of words
   // return the index of the word 'needle'
 }
@@ -191,6 +191,14 @@ function addAllnumbers( numbers ) {
 }
 
 function averages( things ) {
+  let newArr = things.filter(function(thing){
+      return typeof(thing) === 'number';
+    });
+  let addingNumbers = newArr.reduce(function(acc,item){
+    return acc + item;
+  });
+    return addingNumbers/newArr.length;
+
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
