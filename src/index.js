@@ -138,6 +138,11 @@ return newArr;
 function even( numbers ){
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  let newArr = numbers.filter(function(num) {
+    return num % 2 === 0;
+  })
+return newArr;
+
 }
 
 function findTheNeedle( words ){
