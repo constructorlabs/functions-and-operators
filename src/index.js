@@ -25,11 +25,13 @@ function remainder(n1, n2){
   // argument when divided by the second
   return n1 % n2;
 }
-console.log (remainder( 17, 5 ));
-function exponential(){
+
+function exponential(a, b){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return a ** b;
+
 }
 
 function laxEquality(){
