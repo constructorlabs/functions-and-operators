@@ -219,6 +219,9 @@ function sortingNumbers(numbers){
 }
 
 function sortingNumbersDescending(numbers){
+  return numbers.sort(function(a, b) {
+    return b - a;
+  });
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
 }
