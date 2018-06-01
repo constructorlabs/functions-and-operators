@@ -70,6 +70,10 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  let arrLength = words.length;
+  let preMidPoint = (arrLength - 1) / 2;
+  let newArr = words.splice(preMidPoint, 1);
+  return newArr;
 }
 
 function get2ndAnd3rd( myArray ){
