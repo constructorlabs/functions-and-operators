@@ -19,12 +19,13 @@ function average(){
   return newArr/myArrFromArguments.length;
 }
 
-function remainder(){
+function remainder(n1, n2){
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return n1 % n2;
 }
-
+console.log (remainder( 17, 5 ));
 function exponential(){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
