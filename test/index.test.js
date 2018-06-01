@@ -87,7 +87,7 @@ test('Strict equal ', () => {
   expect( result4 ).toEqual( false );
 });
 
-test.only('Smaller', () => {
+test('Smaller', () => {
   const result1 = smaller( 7, 7 );
   expect( result1 ).toEqual( true );
 
@@ -127,7 +127,7 @@ test('Evens', () => {
   expect( result4 ).toEqual( false );
 });
 
-test('Remove middle', () => {
+test.only('Remove middle', () => {
   const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
 
   const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];

@@ -59,12 +59,14 @@ function smaller(a,b){
 function isDivisibleBy(divider1, divider2, number){
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return number  % divider1   === 0 || number % divider2 === 0
 }
 
-function evens(){
+function evens(a,b,c,d){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return a % 2 === 0 && b % 2 === 0 && c % 2 === 0 && d % 2 === 0 ;
 }
 
 function removeMiddle( words ){
@@ -72,6 +74,15 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+    let middleWordIndex = Math.floor((words.length - 1) / 2)
+
+    let middleWord = [words[middleWordIndex]];
+    let newArr = words.splice(middleWordIndex, 1);
+
+
+    return middleWord;
+
+
 }
 
 function get2ndAnd3rd( myArray ){
