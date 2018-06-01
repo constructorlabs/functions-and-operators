@@ -237,7 +237,11 @@ function deleteColour( car ){
   // }
 
   // delete the property colour and return car without this property
-};
+  for(let i=0;i<car.length;i++){
+    delete car[i].color;
+  }
+return car;
+}
 
 function paintShop( cars, colour ){
   // cars is an array of objects that have
