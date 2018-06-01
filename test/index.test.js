@@ -68,6 +68,7 @@ test('Exponential', () => {
 test('Lax equality ', () => {
   const result = laxEquality( 10, "10" );
   expect( result ).toEqual( true );
+  // expect(laxEquality( 1000000, "10" )).toEqual( false );
 
   const result2 = laxEquality( 5, 5 );
   expect( result2 ).toEqual( false );
@@ -99,7 +100,7 @@ test('Smaller', () => {
 });
 
 
-test.only('Is divisible by', () => {
+test('Is divisible by', () => {
   const result1 = isDivisibleBy( 9, 4, 36 );
   expect( result1 ).toEqual( true );
 
@@ -128,10 +129,10 @@ test('Evens', () => {
 });
 
 test('Remove middle', () => {
-  const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle'];
+  const words = [ 'mouse', 'giraffe', 'queen', 'window', 'bottle','window1', 'bottle2'];
 
-  const expectedWords = [ 'mouse', 'giraffe', 'window', 'bottle'];
-  const expectedOutput = [ 'queen' ];
+  const expectedWords = [ 'mouse', 'giraffe', 'queen', 'bottle','window1', 'bottle2'];
+  const expectedOutput = [ 'window' ];
 
   const output = removeMiddle( words );
 
@@ -139,7 +140,7 @@ test('Remove middle', () => {
   expect(words).toEqual(expectedWords);
 });
 
-test('Get second and third', () => {
+test.only('Get second and third', () => {
   const numbers = [ 90, 5, 11, 5, 6 ];
 
   const expectedOutput = [ 5, 11];

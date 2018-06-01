@@ -13,7 +13,7 @@ function average(a,b,c,d,e){
   // this function is passed 5 heights in meters
   // calculate their average and return it
 
-  return ((a + b + c + d +e )/ 5);
+  return (a + b + c + d + e )/ 5;
 }
 
 function remainder(a, b){
@@ -27,29 +27,21 @@ function exponential(a,b){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
-  return a**b;
+  return a ** b;
 }
 
 function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
-if (a === b) {
-  return false;
-} else {
-  return true;
-}
 
-
+  return a == b && a !== b;
 }
 
 function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
-  if ((a === b) && (b === c)) {
-    return true;
-  } else {
-    return false;
-  }
+   return a === b && b === c;
+
 }
 
 function smaller(a,b){
@@ -69,10 +61,11 @@ function isDivisibleBy(divider1, divider2, number){
   return number % divider1 === 0 || number % divider2 === 0;
 }
 
-function evens(){
+function evens(a,b,c,d){
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return a % 2 === 0 && b % 2 === 0 && c % 2 === 0 && d % 2 === 0;
 }
 
 function removeMiddle( words ){
@@ -80,6 +73,8 @@ function removeMiddle( words ){
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  var a = Math.floor(words.length / 2);
+  return words.splice(a, 1);
 }
 
 function get2ndAnd3rd( myArray ){
@@ -87,6 +82,8 @@ function get2ndAnd3rd( myArray ){
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+  var newArr = myArray.slice(1,3);
+  return newArr;
 }
 
 function mapper( myArray ){
