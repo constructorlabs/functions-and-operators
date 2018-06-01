@@ -179,6 +179,14 @@ function averages( things ) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
+  let counter=0;
+  return (things.reduce(function(acc,item){
+    if (typeof item === "number"){
+      counter++;
+      return acc+item;
+    }
+    return acc;
+  },0) ) /counter;
 }
 
 function sortingStrings(strings){
