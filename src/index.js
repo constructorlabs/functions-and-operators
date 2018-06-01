@@ -88,6 +88,10 @@ function mapper( myArray ){
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+   return myArray.map(function(item){
+    return item + 1;
+  });
+
 }
 
 function wordLengths( words ){
