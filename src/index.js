@@ -58,7 +58,7 @@ function smaller(a,b){
   // greater than or equal to first, otherwise return string 'smaller'
   if ( b >= a) {
     return true;
-  } 
+  }
     return "smaller";
 
 }
@@ -66,6 +66,7 @@ function smaller(a,b){
 function isDivisibleBy(divider1, divider2, number){
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return number % divider1 === 0 || number % divider2 === 0;
 }
 
 function evens(){
