@@ -99,7 +99,7 @@ test('Smaller', () => {
 });
 
 
-test.only('Is divisible by', () => {
+test('Is divisible by', () => {
   const result1 = isDivisibleBy( 9, 4, 36 );
   expect( result1 ).toEqual( true );
 
@@ -113,7 +113,7 @@ test.only('Is divisible by', () => {
   expect( result4 ).toEqual( true );
 });
 
-test('Evens', () => {
+test.only('Evens', () => {
   const result1 = evens( 7, 7, 7, 7 );
   expect( result1 ).toEqual( false );
 

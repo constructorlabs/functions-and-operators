@@ -63,11 +63,25 @@ function isDivisibleBy(divider1, divider2, number){
   // do not use if/else or ternary
 }
 
-function evens(){
+function evens(a, b, c, d){
+  // Flexible approach
+  let arrNumbers = Array.from(arguments);
+  let result = arrNumbers
+    .map(num => num % 2 === 0)
+    .reduce( (acc, item) => {
+      return acc && item;
+    });
+
+  return result;
+
+  // NON flexible approach
+  // return a % 2 === 0 && b % 2 === 0 && c % 2 === 0 && d % 2 === 0;
+
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
 }
+console.log(evens( 8, 8 ));
 
 function removeMiddle( words ){
   // words is an array which contains an odd number of strings
