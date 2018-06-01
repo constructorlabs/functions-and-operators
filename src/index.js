@@ -34,10 +34,12 @@ function exponential(a, b){
 
 }
 
-function laxEquality(){
+function laxEquality(a, b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+  return a == b && a !== b;
 }
+
 
 function strictEqual(){
   // function is passed 3 arguments
