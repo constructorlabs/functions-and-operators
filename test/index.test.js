@@ -243,7 +243,7 @@ test('Averages', () => {
   expect( output ).toEqual( 5 );
 });
 
-test('Sorting strings', () => {
+test.only('Sorting strings', () => {
   const companies = ['netflix', 'google', 'amazon', 'facebook', 'microsoft', 'apple'];
   const expected = ['amazon', 'apple', 'facebook', 'google', 'microsoft', 'netflix' ];
 
