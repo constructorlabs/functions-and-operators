@@ -73,7 +73,7 @@ test('Lax equality ', () => {
   expect( result2 ).toEqual( false );
 });
 
-test.only('Strict equal ', () => {
+test('Strict equal ', () => {
   const result1 = strictEqual( 10, "10", 10 );
   expect( result1 ).toEqual( false );
 
@@ -99,7 +99,7 @@ test('Smaller', () => {
 });
 
 
-test('Is divisible by', () => {
+test.only('Is divisible by', () => {
   const result1 = isDivisibleBy( 9, 4, 36 );
   expect( result1 ).toEqual( true );
 
