@@ -27,23 +27,33 @@ function exponential(a,b){
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
-  return a ** b; 
+  return a ** b;
 }
 
-function laxEquality(){
+function laxEquality(a,b){
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+  return a !== b;
 }
 
-function strictEqual(){
+function strictEqual(a,b,c){
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+    if(a === b && b === c){
+      return true;
+    }
+      return false;
 }
 
-function smaller(){
+function smaller(a,b){
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  if(b >= a){
+    return true
+  } else {
+    return "smaller";
+  }
 }
 
 function isDivisibleBy(divider1, divider2, number){

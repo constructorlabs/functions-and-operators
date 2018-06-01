@@ -87,7 +87,7 @@ test('Strict equal ', () => {
   expect( result4 ).toEqual( false );
 });
 
-test('Smaller', () => {
+test.only('Smaller', () => {
   const result1 = smaller( 7, 7 );
   expect( result1 ).toEqual( true );
 
