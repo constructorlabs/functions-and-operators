@@ -47,9 +47,7 @@ const countOnes = (onesAndZeros) => onesAndZeros.replace(/0/g,"").length;
 // Rewrite function as arrow function
 const dateFormat = (date) => {
 let dateArr = date.split("-");
-if (dateArr[0]<10) {
-  dateArr[0] = Number(dateArr[0]);
-}
+dateArr[0] = Number(dateArr[0]);
 const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 dateArr[1] = monthArr[Number(dateArr[1])-1];
 return dateArr.join(" ");
