@@ -50,7 +50,7 @@ function countOnes(onesAndZeros){
 // Rewrite function as arrow function
 function dateFormat(date){
   // function receives a date as a string
-  // in the format yyyy-mm-dd
+  // in the format dd-mm-yyyy
 
   // return date in format d mmmm yyyy
   // for example '03-11-2018' becomes '3 November 2018'
@@ -68,7 +68,7 @@ function mulitplyAll(numbers){
 // Rewrite function as arrow function
 function largestArea(rectangles){
   // rectangles is an array of arrays,
-  // where the inner contains two numbers
+  // where the inner array contains two numbers
   // the first number is the height of a rectangle and
   // the second number is the width of a rectangle
 
