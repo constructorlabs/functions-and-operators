@@ -42,17 +42,7 @@ const circumference = (diameter) => (diameter * Math.PI).toFixed(3);
 
 
 // Rewrite function as arrow function
-const countOnes = (onesAndZeros) => {
-  // onesAndZeros is a string which contains only `1` and `0`
-  // return the number of `1`s in the string
-  let count = 0;
-  for (let i = 0; i < onesAndZeros.length; i++) {
-    if (onesAndZeros[i] == "1") {
-      count++;
-    }
-  }
-  return count;
-}
+const countOnes = (onesAndZeros) => onesAndZeros.replace(/0/g,"").length;
 
 // Rewrite function as arrow function
 const dateFormat = (date) => {
